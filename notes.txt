@@ -1,1 +1,65 @@
-1.express.Router();
+0.app.use(express.urlencoded()) if we user this then the forms information are stored in req.body
+_____________________________________________________________________________________________________________________
+
+1. express.Router();  app.use('/', require('./routes'));
+
+_____________________________________________________________________________________________________________________
+
+2. express.static();  app.use(express.static('./assets'));
+
+_____________________________________________________________________________________________________________________
+
+3. connecting to the data base : 
+    mongoose.connect("mongodb://127.0.0.1:27017/Project");
+    const db = mongoose.connection;
+    db.once('open',()=>{console.log("connected to database");});
+
+_____________________________________________________________________________________________________________________
+
+4. creating a new collection using mongoose
+    step - 1 : creating a Schema
+
+                    cosnt collectionSchema = new mongoose.Schema({
+
+                        email: {
+                            type: String,
+                            required: true,
+                            unique: true
+                        },
+                        password: {
+                            type: String,
+                            required: true
+                        },
+                        name: {
+                            type: String,
+                            required: true
+                        }
+
+
+                    },{timestamps:true})
+    step - 2 : creating the actual collection
+
+                const user = mongoose.model('users',schema);
+
+_____________________________________________________________________________________________________________________
+
+5. cookie is basicially stored in the browser and sent along with each request to the server and 
+   server may or may not modify the cookie and again sent to brower via res variable
+    -> in order to use cookes we need a library called cookie-parser
+    -> if we include this 
+            const cookieParser = require('cookie-parser);
+            app.use(cookieParser());
+        then every req has a object (req.cookies) which consists of the cookies in the browser
+        in order to modify it can do res.cookies('cookie nam',modified val);
+
+_____________________________________________________________________________________________________________________
+
+6. manual authentication
+
+
+
+
+
+    
+
+
