@@ -22,7 +22,7 @@ module.exports.signIn = function(req, res){
     
     if(req.isAuthenticated()){return res.redirect('/users/profile');}
     return res.render('user_sign_in', {
-        title: "Codeial | Sign In"
+        title: "Just connect | Sign In"
     })
 }
 
@@ -49,7 +49,7 @@ module.exports.create = async function(req, res){
 
 // sign in and create a session for the user
 module.exports.createSession = function(req, res){
-    res.redirect('/users/profile');
+    res.redirect('/');
 }
 
 module.exports.destroySession = async function(req,res)

@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+app.use(express.static("assets"));
 
-app.use(express.static('./assets'));
+
 const db = require('./config/mongoose');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');

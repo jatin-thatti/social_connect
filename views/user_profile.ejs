@@ -8,3 +8,7 @@
         <p1><%=user.email%></p1>
         <p><%=user.name%></p>
         
+        if(locals.user.id == user.id){
+
+            <form action="/users/update"></form>
+        }
