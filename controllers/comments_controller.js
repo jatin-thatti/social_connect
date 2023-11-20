@@ -35,7 +35,8 @@ module.exports.destroy = async function(req,res)
     
     if(comment && req.user.id==comment.user){
        
-        Post.findOneAndUpdate(post,{$pull:{comments:req.params.id}});
+        const k = await Post.findOneAndUpdate(comment.post,{$pull:{comments:req.params.id}});
+     
        const x = await Comment.deleteOne(comment);
       
         if(req.xhr){

@@ -7,7 +7,10 @@ app.use(express.static("assets"));
 const db = require('./config/mongoose');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const passport = require('./config/passport-local');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local');
+const passportJwt = require('./config/passport-jwt');
+
 const MongoStore = require('connect-mongo');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded())
